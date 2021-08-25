@@ -1,0 +1,9 @@
+.theme-#{$--theme-name} {
+  #app {
+    background-color: $--bg-color;
+    color: $--color-text;
+  }
+  @import '../element/element-variables.scss';
+  @import '../layout/index.scss';
+  @import '../site.scss';
+}

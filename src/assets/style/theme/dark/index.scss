@@ -1,0 +1,8 @@
+@import './setting.scss';
+@import '../index.scss';
+
+.theme-#{$--theme-name} {
+  .headbar {
+    box-shadow: 0 6px 6px -3px rgb(0 0 0 / 10%), 0 10px 14px 1px rgb(0 0 0 / 4%), 0 4px 18px 3px rgb(0 0 0 / 2%);
+  }
+}

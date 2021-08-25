@@ -1,0 +1,18 @@
+.breadcrumb-bar {
+  padding: 0px 15px;
+
+  .el-breadcrumb__inner a,
+  .el-breadcrumb__inner.is-link {
+    font-weight: normal;
+    color: #606266;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  .el-breadcrumb__item span {
+    color: #606266;
+    opacity: 0.8;
+  }
+}

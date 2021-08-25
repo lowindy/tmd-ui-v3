@@ -1,0 +1,116 @@
+.signin-page {
+  background-color: #ffffff;
+  background-image: url('@/assets/imgs/common/bg1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.mask {
+  background-color: var(--color-primary);
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.mask2 {
+  background-color: #000000;
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+
+.login-content {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 5;
+}
+
+.login-box {
+  width: 420px;
+  min-height: 300px;
+  padding: 60px;
+  background: rgb(255, 255, 255);
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+
+  h3 {
+    font-size: 30px;
+    text-align: center;
+    color: var(--color-primary);
+  }
+}
+
+.login-img {
+  text-align: center;
+}
+
+.login-text {
+  text-align: center;
+
+  p {
+    color: #666666;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+}
+
+.login-form {
+  margin-top: 50px;
+
+  .el-form-item.password-form {
+    margin-bottom: 15px;
+  }
+
+  .el-form-item__label {
+    line-height: 30px;
+    height: 30px;
+    font-size: 15px;
+    color: #999999;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .el-input,
+  .el-input__inner {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .login-btn {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .el-button--text {
+    color: #999999;
+  }
+}
+
+.keep-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

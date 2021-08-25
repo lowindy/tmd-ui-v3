@@ -1,0 +1,80 @@
+.layout-container {
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.layout-left {
+  overflow: hidden;
+  height: 100%;
+  width: $--left-layout-width;
+  float: left;
+  -webkit-transition: width .3s;
+  -moz-transition: width .3s;
+  -ms-transition: width .3s;
+  -o-transition: width .3s;
+  transition: width .3s;
+}
+
+.layout-right {
+  left: $--left-layout-width;
+  height: 100%;
+  overflow: auto;
+  transition: left 0.3s;
+  position: absolute;
+  right: 0;
+  -webkit-transition: left 0.3s;
+  -moz-transition: left 0.3s;
+  -ms-transition: left 0.3s;
+  -o-transition: left 0.3s;
+}
+
+.layout-head {
+  height: $--head-layout-height
+}
+
+
+.layout-main {
+  position: absolute;
+  top: $--head-layout-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+}
+
+// 左侧菜单收起样式
+.collapse-sidebar {
+  .layout-left {
+    width: $--left-layout-collapse-width;
+  }
+
+  .layout-right {
+    left: $--left-layout-collapse-width;
+  }
+}
+
+//自动移滚动条样式
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+  background-color: rgba(50, 50, 50, .15);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 1em;
+  background-color: rgba(50, 50, 50, .05);
+}
+
+@import './logo.scss';
+@import './sidebar.scss';
+@import './headbar.scss';
+@import './breadcrumb.scss';
+@import './signin.scss';
+@import './pagenav.scss';

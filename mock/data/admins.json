@@ -1,0 +1,18 @@
+{
+  "admins": [{
+    "id": 1,
+    "name": "admin",
+    "role": "admin",
+    "password": "123456"
+  }, {
+    "id": 2,
+    "name": "test",
+    "role": "test",
+    "password": "123456"
+  }, {
+    "id": 3,
+    "name": "user",
+    "role": "",
+    "password": "123456"
+  }]
+}

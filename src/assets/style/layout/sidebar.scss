@@ -1,0 +1,160 @@
+.layout-sidebar {
+  height: 100%;
+  -webkit-box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+  background-color: $--menuBar-bg;
+}
+
+// 默认样式修改
+.el-menu {
+  background-color: transparent;
+  border-right: none !important;
+}
+
+.el-menu-item,
+.el-submenu__title {
+  display: flex;
+  align-items: center;
+  height: 50px !important;
+  line-height: 50px !important;
+  color: $--menuBar-color;
+  -webkit-transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.el-menu-item>div {
+  display: flex !important;
+  align-items: center;
+}
+
+.el-menu--collapse .el-submenu.is-active .el-submenu__title {
+  color: $--menuBar-color;
+  background-color: set-color(primary) !important;
+}
+.el-menu--collapse .el-submenu.is-active i{
+  color: #ffffff;
+}
+// horizontal 水平方向时
+.el-menu--horizontal>.el-menu-item.is-active,
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+  border-bottom: 3px solid !important;
+  border-bottom-color: set-color(primary);
+  color: set-color(primary);
+}
+
+.el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+.el-menu--horizontal .el-menu-item:not(.is-disabled):hover,
+.el-menu--horizontal>.el-submenu:focus .el-submenu__title,
+.el-menu--horizontal>.el-submenu:hover .el-submenu__title,
+.el-menu--horizontal .el-menu .el-menu-item.is-active,
+.el-menu--horizontal .el-menu .el-submenu.is-active>.el-submenu__title {
+  color: set-color(primary);
+}
+
+.el-menu.el-menu--horizontal {
+  border-bottom: none !important;
+}
+
+// 外部链接时
+.el-menu-item a,
+.el-menu-item a:hover,
+.el-menu-item i,
+.el-menu-item svg,
+.el-submenu__title i,
+.el-submenu__title svg {
+  color: inherit;
+  text-decoration: none;
+}
+
+.el-menu-item a {
+  width: 86%;
+  display: inline-block;
+}
+
+// 默认 hover 时
+.el-menu-item:focus,
+.el-menu-item:hover,
+.el-submenu__title:hover {
+  color: $--menuBar-color;
+  background-color: set-color(primary) !important;
+
+  i,
+  svg {
+    color: $--menuBar-color;
+  }
+}
+
+// 高亮时
+.el-menu-item.is-active {
+  background-color: set-color(primary);
+  color: $--menuBar-color;
+}
+
+.el-active-extend {
+  color: $--menuBar-color !important;
+  background-color: set-color(primary) !important;
+
+  i,
+  svg {
+    color: $--menuBar-color !important;
+  }
+}
+
+// 菜单收起时且是a链接
+.el-popper.is-dark a {
+  color: $--menuBar-color !important;
+  text-decoration: none;
+}
+
+// 第三方图标字体间距/大小设置
+.el-menu-item [class^="ri-"],
+.el-menu-item [class*=" ri-"],
+.el-menu-item .svg-icon,
+.el-menu-item .svg-icon,
+.el-submenu [class^="ri-"],
+.el-submenu [class*=" ri-"],
+.el-submenu .iconfont,
+.el-submenu .svg-icon {
+  font-size: 16px !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 24px !important;
+  text-align: center;
+  float: left;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+// element plus 本身字体图标
+.el-submenu [class^='el-icon-'] {
+  font-size: 14px !important;
+}
+
+.el-submenu .el-submenu__icon-arrow {
+  color: #999999;
+  margin-top: -5px;
+}
+
+.noneIcon {
+  width: 10px;
+  display: inline-block;
+  height: 10px;
+}
+
+.collapse-sidebar {
+
+  .el-menu-item [class^=ri-],
+  .el-menu-item [class*=" ri-"],
+  .el-menu-item .svg-icon,
+  .el-menu-item .svg-icon,
+  .el-submenu [class^=ri-],
+  .el-submenu [class*=" ri-"],
+  .el-submenu .iconfont,
+  .el-submenu .svg-icon {
+    margin-right: 0;
+  }
+}
