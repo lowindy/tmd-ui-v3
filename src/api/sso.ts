@@ -14,6 +14,6 @@ const SsoApi = {
   },
   ssoLogout<T>(logincode: string) {
     return request.get<T>(`/api/sso/log-out?logincode=${logincode}`);
-  }
+  },
 };
 export default SsoApi;

@@ -17,16 +17,16 @@ export default defineComponent({
   props: {
     path: {
       type: String,
-      default: ''
+      default: '',
     },
     width: {
       type: Number,
-      default: 100
+      default: 100,
     },
     height: {
       type: Number,
-      default: 100
-    }
+      default: 100,
+    },
   },
   setup(props, ctx) {
     const allowTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
@@ -72,7 +72,7 @@ export default defineComponent({
         });
     };
     return { httpRequest };
-  }
+  },
 });
 </script>
 <style>

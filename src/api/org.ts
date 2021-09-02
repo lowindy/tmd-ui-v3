@@ -90,6 +90,6 @@ const OrgApi = {
    */
   editUser<T>(uid: string, params: UserEditDto) {
     return request.post<T>('/api/admin/v0/organization/user/update/' + uid, params);
-  }
+  },
 };
 export default OrgApi;

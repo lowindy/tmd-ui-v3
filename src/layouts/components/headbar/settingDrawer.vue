@@ -47,7 +47,7 @@ export default defineComponent({
   setup(_porps, context) {
     const store = useStore();
     const state = reactive({
-      showDrawer: false
+      showDrawer: false,
     });
     const handleClose = () => {
       state.showDrawer = false;
@@ -90,9 +90,9 @@ export default defineComponent({
       getRadiusClass,
       colorList,
       setColor,
-      getColor
+      getColor,
     };
-  }
+  },
 });
 </script>
 <style lang="scss" scoped>

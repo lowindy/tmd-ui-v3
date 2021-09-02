@@ -13,8 +13,8 @@ export const store = createStore<RootStateTypes>({
     setting,
     routesList,
     theme,
-    member
-  }
+    member,
+  },
 });
 export function useStore<T = AllStateTypes>() {
   return baseUseStore<T>(key);

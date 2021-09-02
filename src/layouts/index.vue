@@ -38,7 +38,7 @@ export default defineComponent({
       return store.state.setting.settingCfg.isCollapse;
     });
     return { isCollapse };
-  }
+  },
 });
 </script>
 <style lang="scss" scoped>

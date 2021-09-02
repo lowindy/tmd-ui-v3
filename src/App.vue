@@ -19,6 +19,6 @@ export default defineComponent({
       }
     });
     return { locale };
-  }
+  },
 });
 </script>

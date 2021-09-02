@@ -67,6 +67,6 @@ export default defineComponent({
       return store.state.routesList.routesList;
     });
     return { menuList, defaultActive, isCollapse, childrenShow };
-  }
+  },
 });
 </script>

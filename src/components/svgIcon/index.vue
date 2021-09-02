@@ -13,18 +13,18 @@ export default defineComponent({
   props: {
     iconClass: {
       type: String as PropType<string>,
-      required: true
+      required: true,
     },
     size: {
       type: Number as PropType<number>,
-      default: 0
-    }
+      default: 0,
+    },
   },
   setup(props: SvgIconProps) {
     const iconName = computed(() => `#icon-${props.iconClass}`);
     const iconSize = computed(() => props.size);
     return { iconName, iconSize };
-  }
+  },
 });
 </script>
 <style lang="scss" scoped>

@@ -17,7 +17,7 @@ interface RouteMeta {
   roles?: string[];
   redirect?: string;
 }
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   name: string;

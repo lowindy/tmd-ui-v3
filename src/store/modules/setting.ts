@@ -10,8 +10,8 @@ const SettingModule: Module<SettingState, RootStateTypes> = {
       isCollapse: false,
       lang: langEnum.ZHCN,
       cptSize: cptSizeEnum.Default,
-      radiusSize: radiusSizeEnum.Default
-    }
+      radiusSize: radiusSizeEnum.Default,
+    },
   },
   mutations: {
     setRadiusSize(state: SettingState, radiusSize: radiusSizeEnum) {
@@ -26,7 +26,7 @@ const SettingModule: Module<SettingState, RootStateTypes> = {
     },
     setLang(state: SettingState, lang: langEnum) {
       state.settingCfg.lang = lang;
-    }
+    },
   },
   actions: {
     // 设置圆角
@@ -64,8 +64,8 @@ const SettingModule: Module<SettingState, RootStateTypes> = {
     getCollapseAction({ commit }) {
       const collapse = getlocalStorage('collapse');
       commit('setCollapse', collapse === 'true');
-    }
-  }
+    },
+  },
 };
 
 export default SettingModule;

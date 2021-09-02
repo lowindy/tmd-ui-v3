@@ -5,7 +5,7 @@ const customerRoutes: Array<RouteRecordRaw> = [
     path: '/layout',
     name: 'layout',
     meta: {
-      hiddenBreadcrumb: true
+      hiddenBreadcrumb: true,
     },
     component: () => import('@/layouts/index.vue'),
     children: [
@@ -16,11 +16,11 @@ const customerRoutes: Array<RouteRecordRaw> = [
         meta: {
           icon: 'ri-home-6-line',
           isShow: true,
-          title: '工作台'
-        }
-      }
-    ]
-  }
+          title: '工作台',
+        },
+      },
+    ],
+  },
 ];
 const staticRoutes: Array<RouteRecordRaw> = [
   {
@@ -28,8 +28,8 @@ const staticRoutes: Array<RouteRecordRaw> = [
     name: 'signin',
     component: () => {
       return import('@/views/signin.vue');
-    }
-  }
+    },
+  },
 ];
 const routes = staticRoutes.concat(customerRoutes);
 fillterRouter();
@@ -39,7 +39,7 @@ function fillterRouter() {
 }
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 });
 
 export default router;

@@ -8,20 +8,20 @@ const MemberModule: Module<MemberState, RootStateTypes> = {
     userName: '',
     avatar: '',
     logined: false,
-    loaded: false
+    loaded: false,
   },
   mutations: {
     getMemberInfo(state: MemberState) {
       state.userName = '管理员';
       state.logined = true;
       state.loaded = true;
-    }
+    },
   },
   actions: {
     getMemberInfoAction({ commit }) {
       commit('getMemberInfo');
-    }
-  }
+    },
+  },
 };
 
 export default MemberModule;

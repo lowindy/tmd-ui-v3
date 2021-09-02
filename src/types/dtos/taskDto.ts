@@ -59,7 +59,7 @@ export interface DiagnosisGroupDto {
 /**
  * @des 诊断组详情DTO
  */
-export interface DiagnosisGroupDetailDto extends DiagnosisGroupDto {}
+export type DiagnosisGroupDetailDto = DiagnosisGroupDto;
 /**
  * @des 新增诊断组DTO
  */

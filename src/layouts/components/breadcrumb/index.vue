@@ -21,7 +21,7 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
     const state = reactive({
-      breadcrumbList: [] as RouteLocationNormalized[]
+      breadcrumbList: [] as RouteLocationNormalized[],
     });
     const goRoute = (route: AppRouteRecordRaw) => {
       const { redirect, path, children } = route;
@@ -56,8 +56,8 @@ export default defineComponent({
     });
     return {
       goRoute,
-      ...toRefs(state)
+      ...toRefs(state),
     };
-  }
+  },
 });
 </script>

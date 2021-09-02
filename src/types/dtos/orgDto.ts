@@ -157,14 +157,14 @@ enum lockEnum {
   None = 'None',
   ReportAndApprove = 'ReportAndApprove',
   Report = 'Report',
-  Approve = 'Approve'
+  Approve = 'Approve',
 }
 export const locksData = () => {
   return [
     { label: '无', value: lockEnum.None },
     { label: '报告和审批', value: lockEnum.ReportAndApprove },
     { label: '报告', value: lockEnum.Report },
-    { label: '审批', value: lockEnum.Approve }
+    { label: '审批', value: lockEnum.Approve },
   ];
 };
 /**
@@ -173,12 +173,12 @@ export const locksData = () => {
 export enum genderEnum {
   Unknown = 'Unknown',
   Male = 'Male',
-  Female = 'Female'
+  Female = 'Female',
 }
 export const genderData = () => {
   return [
     { label: '保密', value: genderEnum.Unknown },
     { label: '男', value: genderEnum.Male },
-    { label: '女', value: genderEnum.Female }
+    { label: '女', value: genderEnum.Female },
   ];
 };

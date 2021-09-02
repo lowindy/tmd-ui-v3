@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-25 13:33:17
+ * @LastEditTime: 2021-09-02 15:42:17
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \tmd-ui-v3\src\views\signin.vue
+-->
 <template>
   <div class="signin-page">
     <div class="mask"></div>
@@ -45,7 +53,7 @@ export default defineComponent({
     const keepLogin = ref(true);
     const formData: SigninDto = reactive({
       userName: '',
-      userPwd: ''
+      userPwd: '',
     });
     const cmdLogin = async () => {
       const vaildResult = await validForm(formRef);
@@ -63,6 +71,6 @@ export default defineComponent({
       }
     };
     return { formData, formRef, formRules, cmdLogin, keepLogin };
-  }
+  },
 });
 </script>

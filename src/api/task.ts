@@ -12,7 +12,7 @@ import {
   TaskPolicyCreateDto,
   TaskPolicyUpdateDto,
   TaskRuleAddDto,
-  TaskRuleEditDto
+  TaskRuleEditDto,
 } from '@/types/dtos/taskDto';
 const TaskApi = {
   /*
@@ -183,6 +183,6 @@ const TaskApi = {
    */
   enableTaskPolicy<T>(id: string, state: boolean) {
     return request.post<T>(`/api/admin/v0/task/diagnosis/policy/enable/${id}/${state}`);
-  }
+  },
 };
 export default TaskApi;

@@ -8,7 +8,7 @@ const ThemeModule: Module<ThemeState, RootStateTypes> = {
   namespaced: true,
   state: {
     theme: 'defalut',
-    color: '#409EFF'
+    color: '#409EFF',
   },
   mutations: {
     setTheme(state: ThemeState, theme: themeEnum) {
@@ -23,7 +23,7 @@ const ThemeModule: Module<ThemeState, RootStateTypes> = {
         const lightColor = getLightColor(color, i / 10);
         document.documentElement.style.setProperty(`--color-${propText}-light-${i}`, lightColor || '');
       }
-    }
+    },
   },
   actions: {
     setThemeAction({ commit }, theme: themeEnum) {
@@ -49,8 +49,8 @@ const ThemeModule: Module<ThemeState, RootStateTypes> = {
       } else {
         commit('setColor', '#409EFF');
       }
-    }
-  }
+    },
+  },
 };
 
 export default ThemeModule;

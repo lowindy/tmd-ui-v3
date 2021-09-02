@@ -36,8 +36,8 @@ export default defineComponent({
   props: {
     chil: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   setup(props) {
     // 获取父级菜单数据
@@ -59,8 +59,8 @@ export default defineComponent({
     };
     return {
       chils,
-      childrenShow
+      childrenShow,
     };
-  }
+  },
 });
 </script>

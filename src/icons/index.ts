@@ -9,5 +9,5 @@ requireAll(req);
 export default {
   install: function (app: ReturnType<typeof createApp>): void {
     app.component('SvgIcon', SvgIcon);
-  }
+  },
 };

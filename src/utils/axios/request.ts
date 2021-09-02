@@ -18,7 +18,7 @@ const showLoading = () => {
     loadingInstance = ElLoading.service({
       lock: true,
       text: '努力加载中...',
-      background: 'rgba(0, 0, 0, 0.7)'
+      background: 'rgba(0, 0, 0, 0.7)',
     });
   }, 800);
 };
@@ -48,7 +48,7 @@ if (localhostUrl !== process.env.VUE_APP_SSO_WEB_URL) {
 // 创建axios的实例
 const service = axios.create({
   baseURL: url,
-  timeout: 15000 // 超时时间
+  timeout: 15000, // 超时时间
 });
 
 /**
@@ -69,7 +69,7 @@ service.interceptors.request.use(
   (error) => {
     hiddenLoading();
     return Promise.reject(error);
-  }
+  },
 );
 
 /**
@@ -164,7 +164,7 @@ service.interceptors.response.use(
       return Promise.reject(new Error('401'));
     }
     return Promise.reject(emsg);
-  }
+  },
 );
 
 // 泛型接口

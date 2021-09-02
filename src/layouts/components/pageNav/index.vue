@@ -11,16 +11,16 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     showBack: {
       type: Boolean,
-      default: false
+      default: false,
     },
     backFn: {
       type: Function,
-      default: null
-    }
+      default: null,
+    },
   },
   setup(props) {
     const goBack = () => {
@@ -31,7 +31,7 @@ export default defineComponent({
       }
     };
     return { goBack };
-  }
+  },
 });
 </script>
 <style lang="scss" scoped>

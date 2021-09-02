@@ -15,7 +15,7 @@ export function setlocalStorage(key: string, value: any) {
 export enum getlocalStorageEnum {
   'string',
   'number',
-  'object'
+  'object',
 }
 export function getlocalStorage(key: string, type: getlocalStorageEnum = getlocalStorageEnum.string): any {
   if (localStorage) {

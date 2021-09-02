@@ -6,6 +6,6 @@ const MemberApi = {
   },
   signOut<T>() {
     return request.get<T>('/api/userApp/v0/SignOut');
-  }
+  },
 };
 export default MemberApi;

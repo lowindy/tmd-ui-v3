@@ -76,6 +76,6 @@ export default defineComponent({
       }
     };
     return { isCollapse, setCollapse, lang, onLanguageChange, settingDrawerRef, showSettingDrawer, closeSettingDrawer, cmdSingout };
-  }
+  },
 });
 </script>

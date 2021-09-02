@@ -4,12 +4,12 @@ export interface ThemeState {
 }
 export enum themeEnum {
   Defalut = 'defalut',
-  Dark = 'dark'
+  Dark = 'dark',
 }
 export function theneList(): Object {
   return [
     { name: '默认风格', theme: themeEnum.Defalut },
-    { name: '暗黑风格', theme: themeEnum.Dark }
+    { name: '暗黑风格', theme: themeEnum.Dark },
   ];
 }
 
