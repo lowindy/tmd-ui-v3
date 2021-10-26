@@ -1,16 +1,26 @@
 import { getlocalStorage, setlocalStorage } from '@/utils/helper';
 import { getLightColor } from '@/utils/theme';
 import { RootStateTypes } from '@/types/storeDto';
-import { themeEnum, ThemeState } from '@/types/storeDto/theme';
+import { cptSizeEnum, radiusSizeEnum, themeEnum, ThemeState } from '@/types/storeDto/theme';
 import { Module } from 'vuex';
+import { defaultCfg } from '@/config/default';
 
 const ThemeModule: Module<ThemeState, RootStateTypes> = {
   namespaced: true,
   state: {
-    theme: 'defalut',
-    color: '#409EFF',
+    theme: 'default',
+    color: '#409eff',
+    cptSize: cptSizeEnum.Default,
+    radiusSize: radiusSizeEnum.Default,
   },
   mutations: {
+    setRadiusSize(state: ThemeState, radiusSize: radiusSizeEnum) {
+      state.radiusSize = radiusSize;
+      document.documentElement.style.setProperty('--border-radius', radiusSize);
+    },
+    setCptSize(state: ThemeState, cptSize: cptSizeEnum) {
+      state.cptSize = cptSize;
+    },
     setTheme(state: ThemeState, theme: themeEnum) {
       state.theme = theme;
       document.body.className = `theme-${state.theme}`;
@@ -26,6 +36,25 @@ const ThemeModule: Module<ThemeState, RootStateTypes> = {
     },
   },
   actions: {
+    // 设置圆角
+    setRadiusAction({ commit }, radiusSize: radiusSizeEnum) {
+      setlocalStorage('radiusSize', radiusSize);
+      commit('setRadiusSize', radiusSize);
+    },
+    getRadiusAction({ commit }) {
+      const setRadiusSize = getlocalStorage('radiusSize');
+      commit('setRadiusSize', setRadiusSize || defaultCfg.radiusSize);
+    },
+    // element 组件大小
+    setCptSizeAction({ commit }, cptSize: cptSizeEnum) {
+      setlocalStorage('cptSize', cptSize);
+      commit('setCptSize', cptSize);
+    },
+    getCptSizeAction({ commit }) {
+      const setCptSize = getlocalStorage('cptSize');
+      commit('setCptSize', setCptSize || defaultCfg.cptSize);
+    },
+    // 设置风格
     setThemeAction({ commit }, theme: themeEnum) {
       setlocalStorage('theme', theme);
       commit('setTheme', theme);
@@ -35,7 +64,7 @@ const ThemeModule: Module<ThemeState, RootStateTypes> = {
       if (theme && theme.length > 0) {
         commit('setTheme', theme);
       } else {
-        commit('setTheme', 'default');
+        commit('setTheme', defaultCfg.theme);
       }
     },
     setColorAction({ commit }, color: string) {
@@ -47,7 +76,7 @@ const ThemeModule: Module<ThemeState, RootStateTypes> = {
       if (color && color.length > 0) {
         commit('setColor', color);
       } else {
-        commit('setColor', '#409EFF');
+        commit('setColor', defaultCfg.color);
       }
     },
   },

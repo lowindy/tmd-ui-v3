@@ -38,13 +38,7 @@ const hiddenLoading = () => {
     }
   }
 };
-let url = '';
-const localhostUrl = window.location.protocol + '//' + window.location.host;
-if (localhostUrl !== process.env.VUE_APP_SSO_WEB_URL) {
-  url = process.env.VUE_APP_BASE_API;
-} else {
-  url = '';
-}
+const url = import.meta.env.VITE_APP_API_URL as string;
 // 创建axios的实例
 const service = axios.create({
   baseURL: url,

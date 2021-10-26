@@ -65,7 +65,6 @@ export default defineComponent({
       settingDrawerRef.value.cmdInit();
     };
     const closeSettingDrawer = () => {
-      console.log('closeSettingDrawer');
     };
     const cmdSingout = async () => {
       let res = await MemberApi.signOut();

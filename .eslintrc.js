@@ -30,7 +30,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 0,
     '@type-eslint/ban-ts-comment': 'off',
     '@type-eslint/ban-types': 'off',
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': import.meta.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': import.meta.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
 };

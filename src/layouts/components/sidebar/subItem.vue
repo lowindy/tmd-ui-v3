@@ -1,6 +1,6 @@
 <template>
   <template v-for="val in chils">
-    <el-submenu :index="val.path" :key="val.path" v-if="val.children && childrenShow(val.children) > 0 && val.meta.isShow">
+    <el-sub-menu :index="val.path" :key="val.path" v-if="val.children && childrenShow(val.children) > 0 && val.meta.isShow">
       <template #title>
         <i :class="val.meta.icon" v-if="val.meta.icon"></i>
         <SvgIcon name="home" v-else-if="val.meta.svg" />
@@ -8,7 +8,7 @@
         <span>{{ val.meta.title }}</span>
       </template>
       <sub-item :chil="val.children" />
-    </el-submenu>
+    </el-sub-menu>
     <el-menu-item :index="val.path" :key="val.path" v-if="(!val.children || childrenShow(val.children) === 0) && val.meta.isShow">
       <template v-if="!val.meta.isLink">
         <i :class="val.meta.icon" v-if="val.meta.icon"></i>

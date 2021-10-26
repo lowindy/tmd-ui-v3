@@ -1,38 +1,42 @@
 <template>
-  <svg class="svg-icon" aria-hidden="true" :style="iconSize > 0 ? { width: iconSize + 'px', height: iconSize + 'px' } : null">
-    <use :xlink:href="iconName" />
+  <svg aria-hidden="true" class="svg-icon-spin" :style="size > 0 ? { width: size + 'px', height: size + 'px' } : null">
+    <use :xlink:href="symbolId" :fill="color" />
   </svg>
 </template>
+
 <script lang="ts">
-interface SvgIconProps {
-  iconClass: string;
-  size: number;
-}
-import { computed, defineComponent, PropType } from 'vue';
+import { defineComponent, computed, PropType } from 'vue';
 export default defineComponent({
+  name: 'SvgIcon',
   props: {
-    iconClass: {
-      type: String as PropType<string>,
+    prefix: {
+      type: String,
+      default: 'icon',
+    },
+    name: {
+      type: String,
       required: true,
     },
     size: {
       type: Number as PropType<number>,
       default: 0,
     },
+    color: {
+      type: String,
+      default: '#333',
+    },
   },
-  setup(props: SvgIconProps) {
-    const iconName = computed(() => `#icon-${props.iconClass}`);
-    const iconSize = computed(() => props.size);
-    return { iconName, iconSize };
+  setup(props) {
+    const symbolId = computed(() => `#${props.prefix}-${props.name}`);
+    return { symbolId };
   },
 });
 </script>
-<style lang="scss" scoped>
-.svg-icon {
+<style scoped>
+.svg-icon-spin {
   width: 1em;
   height: 1em;
-  vertical-align: -0.15em;
   fill: currentColor;
-  overflow: hidden;
+  vertical-align: middle;
 }
 </style>

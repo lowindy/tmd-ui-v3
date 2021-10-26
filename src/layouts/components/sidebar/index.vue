@@ -1,7 +1,7 @@
 <template>
   <el-menu router :collapse="isCollapse" :default-active="defaultActive" :collapse-transition="false">
     <template v-for="val in menuList">
-      <el-submenu :index="val.path" v-if="val.children && childrenShow(val.children) > 0 && val.meta.isShow" :key="val.path">
+      <el-sub-menu :index="val.path" v-if="val.children && childrenShow(val.children) > 0 && val.meta.isShow" :key="val.path">
         <template #title>
           <i :class="val.meta.icon" v-if="val.meta.icon"></i>
           <SvgIcon name="home" v-else-if="val.meta.svg" />
@@ -9,7 +9,7 @@
           <span>{{ val.meta.title }}</span>
         </template>
         <SubItem :chil="val.children" />
-      </el-submenu>
+      </el-sub-menu>
 
       <el-menu-item :index="val.path" :key="val.path" v-if="(!val.children || childrenShow(val.children) === 0) && val.meta.isShow">
         <i :class="val.meta.icon" v-if="val.meta.icon"></i>

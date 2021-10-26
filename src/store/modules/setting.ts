@@ -1,6 +1,6 @@
 import { getlocalStorage, setlocalStorage } from '@/utils/helper';
 import { RootStateTypes } from '@/types/storeDto';
-import { cptSizeEnum, langEnum, radiusSizeEnum, SettingState } from '@/types/storeDto/setting';
+import { langEnum, SettingState } from '@/types/storeDto/setting';
 import { Module } from 'vuex';
 
 const SettingModule: Module<SettingState, RootStateTypes> = {
@@ -9,18 +9,9 @@ const SettingModule: Module<SettingState, RootStateTypes> = {
     settingCfg: {
       isCollapse: false,
       lang: langEnum.ZHCN,
-      cptSize: cptSizeEnum.Default,
-      radiusSize: radiusSizeEnum.Default,
     },
   },
   mutations: {
-    setRadiusSize(state: SettingState, radiusSize: radiusSizeEnum) {
-      state.settingCfg.radiusSize = radiusSize;
-      document.documentElement.style.setProperty('--border-radius', radiusSize);
-    },
-    setCptSize(state: SettingState, cptSize: cptSizeEnum) {
-      state.settingCfg.cptSize = cptSize;
-    },
     setCollapse(state: SettingState, isCollapse: boolean) {
       state.settingCfg.isCollapse = isCollapse;
     },
@@ -29,24 +20,6 @@ const SettingModule: Module<SettingState, RootStateTypes> = {
     },
   },
   actions: {
-    // 设置圆角
-    setRadiusAction({ commit }, radiusSize: radiusSizeEnum) {
-      setlocalStorage('radiusSize', radiusSize);
-      commit('setRadiusSize', radiusSize);
-    },
-    getRadiusAction({ commit }) {
-      const setRadiusSize = getlocalStorage('radiusSize');
-      commit('setRadiusSize', setRadiusSize || radiusSizeEnum.Default);
-    },
-    // element 组件大小
-    setCptSizeAction({ commit }, cptSize: cptSizeEnum) {
-      setlocalStorage('cptSize', cptSize);
-      commit('setCptSize', cptSize);
-    },
-    getCptSizeAction({ commit }) {
-      const setCptSize = getlocalStorage('cptSize');
-      commit('setCptSize', setCptSize || '');
-    },
     // 国际化
     setlangAction({ commit }, lang: langEnum) {
       setlocalStorage('lang', lang);

@@ -11,13 +11,13 @@
       </el-form-item>
       <el-form-item label="圆角设置">
         <el-row :gutter="10">
-          <el-col :span="6"
-            ><el-button :type="getRadiusClass(radiusSizeEnum.Default)" @click="setRadius(radiusSizeEnum.Default)">默认</el-button></el-col
-          >
+          <el-col :span="6">
+            <el-button :type="getRadiusClass(radiusSizeEnum.Default)" @click="setRadius(radiusSizeEnum.Default)">默认</el-button>
+          </el-col>
           <el-col :span="6"><el-button :type="getRadiusClass(radiusSizeEnum.Round)" @click="setRadius(radiusSizeEnum.Round)">圆角</el-button></el-col>
-          <el-col :span="6"
-            ><el-button :type="getRadiusClass(radiusSizeEnum.Material)" @click="setRadius(radiusSizeEnum.Material)">直角</el-button></el-col
-          >
+          <el-col :span="6">
+            <el-button :type="getRadiusClass(radiusSizeEnum.Material)" @click="setRadius(radiusSizeEnum.Material)">直角</el-button>
+          </el-col>
         </el-row>
       </el-form-item>
       <el-form-item label="颜色设置">
@@ -39,8 +39,7 @@
 </template>
 <script lang="ts">
 import { useStore } from '@/store';
-import { cptSizeEnum, radiusSizeEnum } from '@/types/storeDto/setting';
-import { colorList } from '@/types/storeDto/theme';
+import { colorList, cptSizeEnum, radiusSizeEnum } from '@/types/storeDto/theme';
 import { computed, defineComponent, reactive, toRefs } from 'vue';
 export default defineComponent({
   emits: ['closeDlg'],
@@ -58,22 +57,22 @@ export default defineComponent({
     };
     // setting radius
     const getRadiusClass = (type: radiusSizeEnum) => {
-      return store.state.setting.settingCfg.radiusSize === type ? 'primary' : 'default';
+      return store.state.theme.radiusSize === type ? 'primary' : 'default';
     };
     const setRadius = (radius: radiusSizeEnum) => {
-      store.dispatch('setting/setRadiusAction', radius);
+      store.dispatch('theme/setRadiusAction', radius);
     };
     // setting cptsize
     const getSizeClass = (type: cptSizeEnum) => {
-      return store.state.setting.settingCfg.cptSize === type ? 'primary' : 'default';
+      return store.state.theme.cptSize === type ? 'primary' : 'default';
     };
     const setCptSize = (size: cptSizeEnum) => {
-      store.dispatch('setting/setCptSizeAction', size);
+      store.dispatch('theme/setCptSizeAction', size);
       window.location.reload();
     };
     // theme color
     const getColor = computed(() => {
-      return store.state.theme.color;
+      return store.state.theme.color || '#409eff';
     });
     const setColor = (color: string) => {
       store.dispatch('theme/setColorAction', color);

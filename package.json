@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "test": "vue-cli-service build --mode test",
-    "build": "vue-cli-service build",
+    "dev": "vite",
+    "serve": "vite preview",
+    "build": "vue-tsc --noEmit && vite build",
     "lint": "vue-cli-service lint",
     "mock": "json-server mock/server.js --port 9090",
     "mockdev": "npm run mock & npm run dev"
@@ -13,11 +13,11 @@
   "dependencies": {
     "@types/js-cookie": "^2.2.7",
     "axios": "^0.21.1",
-    "element-plus": "^1.0.2-beta.70",
+    "element-plus": "^1.1.0-beta.21",
     "js-cookie": "^3.0.0",
     "remixicon": "^2.5.0",
-    "svg-sprite-loader": "^6.0.7",
-    "vue": "^3.0.4",
+    "unplugin-vue-components": "^0.16.0",
+    "vue": "^3.2.16",
     "vue-i18n": "^9.1.6",
     "vue-router": "^4.0.3",
     "vuedraggable": "^4.0.3",
@@ -27,11 +27,7 @@
     "@types/lodash": "^4.14.168",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
-    "@vue/cli-plugin-eslint": "~5.0.0-beta.1",
-    "@vue/cli-plugin-router": "~5.0.0-beta.1",
-    "@vue/cli-plugin-typescript": "~5.0.0-beta.1",
-    "@vue/cli-plugin-vuex": "~5.0.0-beta.1",
-    "@vue/cli-service": "~5.0.0-beta.1",
+    "@vitejs/plugin-vue": "^1.9.3",
     "@vue/compiler-sfc": "^3.0.4",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
@@ -43,6 +39,9 @@
     "prettier": "^2.2.1",
     "sass": "^1.32.12",
     "sass-loader": "^10.1.1",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "vite": "^2.6.4",
+    "vite-plugin-svg-icons": "^1.0.5",
+    "vue-tsc": "^0.3.0"
   }
 }
