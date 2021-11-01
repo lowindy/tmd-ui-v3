@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "serve": "vite preview",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "lint": "vue-cli-service lint",
     "mock": "json-server mock/server.js --port 9090",
     "mockdev": "npm run mock & npm run dev"
@@ -20,7 +20,6 @@
     "vue": "^3.2.16",
     "vue-i18n": "^9.1.6",
     "vue-router": "^4.0.3",
-    "vuedraggable": "^4.0.3",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

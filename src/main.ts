@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import router from './router';
 import { store, key } from './store';
-// import ElementPlus from 'element-plus';
 import i18n from './lang/il8n';
 import 'virtual:svg-icons-register';
 import GlobalCpt from '@/components/global/index';
